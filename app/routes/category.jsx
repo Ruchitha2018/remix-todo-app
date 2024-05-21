@@ -8,10 +8,10 @@ const ListCategory = () => {
                 <table>
                     <thead>
                         <tr>
-                            <td>Sr.No</td>
-                            <td>Category Name</td>
-                            <td>Category Color Code</td>
-                            <td>Actions</td>
+                            <th>Sr.No</th>
+                            <th>Category Name</th>
+                            <th>Category Color Code</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
