@@ -1,53 +1,24 @@
-import { Link, Outlet } from "@remix-run/react"
+import { Link, Outlet, useLoaderData } from "@remix-run/react"
+import { getCategories } from "../data/category.server";
+import CategoryList from "../components/CategoryList";
 
 const ListCategory = () => {
+
+    const categories = useLoaderData();
+
     return (
         <div className="container">
             <h2>List Category</h2>
             <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Sr.No</th>
-                            <th>Category Name</th>
-                            <th>Category Color Code</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Project 1</td>
-                            <td>red</td>
-                            <td>
-                                <Link>Edit</Link>
-                                <Link>Delete</Link>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Project 2</td>
-                            <td>red</td>
-                            <td>
-                                <Link>Edit</Link>
-                                <Link>Delete</Link>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Project 3</td>
-                            <td>red</td>
-                            <td>
-                                <Link>Edit</Link>
-                                <Link>Delete</Link>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <CategoryList categories={categories}/>
             </div>
             <Outlet />
         </div>
     )
 }
 
-export default ListCategory
+export default ListCategory;
+
+export function loader() {
+    return getCategories();
+}
