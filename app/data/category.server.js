@@ -36,3 +36,31 @@ export async function getCategory(id) {
         throw error;
     }
 }
+
+export async function updateCategory(id, categoryData) {
+    console.log(id, categoryData)
+    try {
+       await prisma.category.update({
+        where: {id},
+        data: {
+            catName: categoryData.catName,
+            catCode: categoryData.catCode
+        }
+       })
+    } catch(error) {
+        console.log(error);
+        throw error;
+    }
+  }
+
+
+  export async function deleteCategory(id) {
+    try {
+        await prisma.category.delete({
+            where: {id},
+        })
+    } catch(error) {
+        console.log(error)
+        throw error;
+    }
+  }

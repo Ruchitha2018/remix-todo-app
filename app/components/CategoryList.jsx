@@ -1,6 +1,16 @@
-import { Link } from "@remix-run/react"
+import { Link, useFetcher } from "@remix-run/react"
 
 const CategoryList = ({categories}) => {
+
+    const fetcher = useFetcher();
+    function handleDeleteCategory(id) {
+      const proceed = confirm('Are you sure? Do you want to delete this item?');
+      if (!proceed) {
+        return;
+      }
+      fetcher.submit(null, { method: 'delete', action: `/category/${id}` });
+    }
+  
     return (
         <table>
                     <thead>
@@ -19,7 +29,7 @@ const CategoryList = ({categories}) => {
                                 <td>{data.catCode}</td>
                                 <td>
                                 <Link to={'/category/'+ data.id}>Edit</Link>
-                                <Link>Delete</Link>
+                                <Link onClick={() => handleDeleteCategory(data.id)}>Delete</Link>
                             </td>
                             </tr>
                         ))}
