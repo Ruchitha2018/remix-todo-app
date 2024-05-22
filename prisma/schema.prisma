@@ -19,3 +19,13 @@ model category {
   catCode String
   dateAdded DateTime @default(now())
 }
+
+model todo {
+  id Int @id @default(autoincrement())
+  name String
+  deadline DateTime
+  catId Int
+  status String
+  dateAdded DateTime @default(now())
+}
+

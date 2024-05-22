@@ -19,7 +19,6 @@ export async function action({request}) {
  const formData = await request.formData();
 
  const categoryData = Object.fromEntries(formData);
-console.log(formData)
  await addCategory(categoryData)
  return redirect('/category')
 }

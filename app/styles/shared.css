@@ -15,6 +15,7 @@ body {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
 }
+
 .modal {
   position: fixed;
   top: 25vh;
@@ -25,6 +26,7 @@ body {
   animation: fade-slide-down 0.5s ease-out forwards;
   padding: 0px !important;
 }
+
 .modal-title {
   margin: 0px;
   background-color: var(--primary);
@@ -32,6 +34,7 @@ body {
   text-align: center;
   padding: 10px 0;
 }
+
 .modal-content {
   padding: 40px 30px;
 }
@@ -41,20 +44,24 @@ body {
   border: 1px solid #c7c5c5;
   height: 40px;
 }
+
 .form-col {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
 }
+
 .form-col label {
   margin-bottom: 10px;
 }
+
 .form-btns {
   display: flex;
   gap: 20px;
   align-items: center;
   justify-content: end;
 }
+
 .form-btns a {
   color: tomato;
   text-decoration: none;
@@ -71,6 +78,7 @@ button {
   font-size: 14px;
   cursor: pointer;
 }
+
 .container {
   padding: 0 50px
 }
@@ -80,15 +88,59 @@ table {
   border: 2px solid #F7F7F8;
   border-collapse: collapse;
 }
+
 thead {
   background-color: var(--primary);
   color: var(--text-color);
   font-weight: bold;
 }
+
 tr {
   /* border-bottom: 1px solid #F7F7F8; */
 }
-th, td {
+
+th,
+td {
   padding: 10px 20px;
   text-align: left;
+}
+
+.todo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  gap: 5px;
+}
+.todo-card {
+  border: 2px solid #F7F7F8;
+}
+.todo-title {
+  background-color: var(--primary);
+  color: var(--text-color);
+  margin: 0;
+  text-align: center;
+  padding: 10px 0;
+}
+.todo-item {
+  padding: 15px;
+  border-bottom: 1px solid lightgray;
+}
+.todo-item h4 {
+  margin: 0;
+  padding: 05px 0;
+}
+.todo-item p {
+  margin: 0;
+  font-size: 14px;
+}
+.todo-item-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.catgory-code {
+  color: #fff;
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 05px;
+  font-size: 12px;
 }
