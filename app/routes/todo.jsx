@@ -3,13 +3,16 @@ import { getCategories } from "../data/category.server.js";
 import TodoCard from "../components/TodoCard";
 import { getTodosTodoStatus,getTodosInProgressStatus, getTodosCompletedStatus } from "../data/todo.server.js";
 
-const ListCategory = () => {
+const ListTodo = () => {
 
     const { todosTodoStatus, todosInProgressStatus, todosCompletedStatus } = useLoaderData();
     console.log(todosTodoStatus, todosInProgressStatus)
     return (
         <div className="container">
-            <h2>Todos</h2>
+            <div className="main-heading">
+                <h2>Todos</h2>
+                <button><Link to="add">Add Todo</Link></button>
+            </div>
             <div className="todo-grid">
                 <TodoCard title="ToDo" data={todosTodoStatus}/>
                 <TodoCard title="In-Progress" data={todosInProgressStatus} />
@@ -20,7 +23,7 @@ const ListCategory = () => {
     )
 }
 
-export default ListCategory;
+export default ListTodo;
 
 export async function loader() {
     const categories = await getCategories();
@@ -28,6 +31,6 @@ export async function loader() {
     const todosInProgressStatus = await getTodosInProgressStatus()
     const todosCompletedStatus = await getTodosCompletedStatus();
 
-    return { categories, todosTodoStatus, todosInProgressStatus, todosCompletedStatus }
+    return { categories, todosTodoStatus, todosInProgressStatus, todosCompletedStatus}
 
 }

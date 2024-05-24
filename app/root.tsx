@@ -8,7 +8,8 @@ import {
 
 
 import Styles from '~/styles/shared.css?url';
-
+import Navbar from '~/components/Navbar';
+import Footer from '~/components/Footer'
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -21,7 +22,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+        <Navbar />
         {children}
+        <Footer />
         <ScrollRestoration />
         <Scripts />
       </body>

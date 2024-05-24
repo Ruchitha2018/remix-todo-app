@@ -26,26 +26,6 @@ export async function getTodosTodoStatus() {
         throw error;
     }
 }
-export async function getTodosTodoStatus() {
-    try {
-        const todos = await prisma.todo.findMany({ where: {status: 'todo'}});
-        return todos;
-    }
-    catch (error) {
-        console.log(error);
-        throw error;
-    }
-}
-export async function getTodosTodoStatus() {
-    try {
-        const todos = await prisma.todo.findMany({ where: {status: 'todo'}});
-        return todos;
-    }
-    catch (error) {
-        console.log(error);
-        throw error;
-    }
-}
 export async function getTodosInProgressStatus() {
     try {
         const todos = await prisma.todo.findMany({ where: {status: 'in-progress'}});

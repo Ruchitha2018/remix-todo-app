@@ -8,9 +8,12 @@ const ListCategory = () => {
 
     return (
         <div className="container">
-            <h2>List Category</h2>
+            <div className="main-heading">
+                <h2>List Category</h2>
+                <button><Link to="add">Add Category</Link></button>
+            </div>
             <div>
-                <CategoryList categories={categories}/>
+                <CategoryList categories={categories} />
             </div>
             <Outlet />
         </div>
